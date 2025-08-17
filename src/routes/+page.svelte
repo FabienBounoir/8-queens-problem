@@ -186,7 +186,7 @@
 								disabled={isCalculating}
 							>
 								{#if queenOnGrid[rowIndex][colIndex]}
-									<div class="queen"></div>
+									<div class="queen" class:conflict={checkQueenConflicts(rowIndex, colIndex)}></div>
 								{/if}
 							</button>
 						{/each}
@@ -457,6 +457,15 @@
 				height: 100%;
 				z-index: 2;
 				position: relative;
+				transition: all 0.3s ease;
+
+				&.conflict {
+					filter: hue-rotate(0deg) saturate(2) brightness(1.2)
+						drop-shadow(0 0 15px rgba(231, 76, 60, 0.8))
+						drop-shadow(0 0 30px rgba(231, 76, 60, 0.6));
+					border-radius: 50%;
+					animation: conflictPulse 1.5s ease-in-out infinite alternate;
+				}
 			}
 		}
 	}
@@ -524,6 +533,19 @@
 		}
 		100% {
 			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes conflictPulse {
+		0% {
+			transform: scale(1);
+			filter: hue-rotate(0deg) saturate(2) brightness(1.2)
+				drop-shadow(0 0 15px rgba(231, 76, 60, 0.8)) drop-shadow(0 0 30px rgba(231, 76, 60, 0.6));
+		}
+		100% {
+			transform: scale(1.05);
+			filter: hue-rotate(0deg) saturate(2) brightness(1.2)
+				drop-shadow(0 0 20px rgba(231, 76, 60, 1)) drop-shadow(0 0 40px rgba(231, 76, 60, 0.8));
 		}
 	}
 </style>
