@@ -273,17 +273,18 @@
 </main>
 
 <style lang="scss">
-	@import '../lib/styles/variables.scss';
+	@use '../lib/styles/variables' as vars;
+	@use 'sass:color';
 
 	h1 {
-		color: $primary-color;
+		color: vars.$primary-color;
 		text-align: center;
 		margin-bottom: 20px;
 	}
 
 	main {
 		min-height: 100vh;
-		@include flex-center;
+		@include vars.flex-center;
 		flex-direction: column;
 		background: #312e2b;
 	}
@@ -303,13 +304,13 @@
 		margin-left: 20px;
 
 		h3 {
-			color: $primary-color;
+			color: vars.$primary-color;
 			margin-bottom: 20px;
 			text-align: center;
 		}
 
 		h4 {
-			color: $text-color;
+			color: vars.$text-color;
 			margin: 15px 0 10px 0;
 			font-size: 1.1rem;
 		}
@@ -327,7 +328,7 @@
 				display: block;
 				margin-bottom: 5px;
 				font-weight: 500;
-				color: $text-color;
+				color: vars.$text-color;
 			}
 
 			input[type='number'],
@@ -376,16 +377,16 @@
 				font-weight: bold;
 				padding: 2px 8px;
 				border-radius: 12px;
-				background-color: $primary-color;
+				background-color: vars.$primary-color;
 				color: white;
 
 				&.conflict {
-					background-color: $accent-color;
+					background-color: vars.$accent-color;
 				}
 			}
 
 			.success {
-				color: $secondary-color;
+				color: vars.$secondary-color;
 				font-weight: bold;
 				text-align: center;
 				opacity: 0;
@@ -419,7 +420,7 @@
 			align-items: center;
 			justify-content: center;
 			font-size: 1.5rem;
-			color: $text-color;
+			color: vars.$text-color;
 			transition: background-color 0.3s ease;
 			aspect-ratio: 1;
 			border: none;
@@ -497,21 +498,21 @@
 			}
 
 			&.reset-button {
-				background-color: $accent-color;
+				background-color: vars.$accent-color;
 				color: white;
 
 				&:hover:not(:disabled) {
-					background-color: darken($accent-color, 10%);
+					background-color: color.adjust(vars.$accent-color, $lightness: -10%);
 					transform: translateY(-2px);
 				}
 			}
 
 			&.solve-button {
-				background-color: $secondary-color;
+				background-color: vars.$secondary-color;
 				color: white;
 
 				&:hover:not(:disabled) {
-					background-color: darken($secondary-color, 10%);
+					background-color: color.adjust(vars.$secondary-color, $lightness: -10%);
 					transform: translateY(-2px);
 				}
 			}

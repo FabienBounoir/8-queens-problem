@@ -1,3 +1,6 @@
+@use 'variables';
+@use 'sass:color';
+
 // Reset CSS basique
 * {
     box-sizing: border-box;
@@ -37,48 +40,9 @@ button {
 a {
     color: variables.$primary-color;
     text-decoration: none;
-    @include transition(color);
+    @include variables.transition(color);
 
     &:hover {
-        color: darken(variables.$primary-color, 10%);
+        color: color.adjust(variables.$primary-color, $lightness: -10%);
     }
-}
-
-// Classes utilitaires
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 variables.$spacing-md;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.flex-center {
-    @include flex-center;
-}
-
-.mt-sm {
-    margin-top: variables.$spacing-sm;
-}
-
-.mt-md {
-    margin-top: variables.$spacing-md;
-}
-
-.mt-lg {
-    margin-top: variables.$spacing-lg;
-}
-
-.mb-sm {
-    margin-bottom: variables.$spacing-sm;
-}
-
-.mb-md {
-    margin-bottom: variables.$spacing-md;
-}
-
-.mb-lg {
-    margin-bottom: variables.$spacing-lg;
 }
