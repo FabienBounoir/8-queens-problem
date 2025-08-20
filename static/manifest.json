@@ -1,0 +1,23 @@
+{
+    "name": "8 Queens Problem Solver",
+    "short_name": "8 Queens",
+    "description": "Solve the 8 Queens Problem interactively. Visualize solutions, explore conflicts, and learn the logic behind this classic chess puzzle with our interactive solver.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#dae3e7",
+    "theme_color": "#7d99ad",
+    "icons": [
+        {
+            "src": "/queen.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "games",
+        "education",
+        "entertainment"
+    ],
+    "lang": "en"
+}

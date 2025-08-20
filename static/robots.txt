@@ -1,3 +1,11 @@
-# allow crawling everything by default
+# Robots.txt for 8 Queens Problem Solver
+# Allow crawling everything by default
 User-agent: *
+Allow: /
 Disallow:
+
+# Sitemap location
+Sitemap: https://8queensProblem.vercel.app/sitemap.xml
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1

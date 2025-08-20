@@ -7,9 +7,9 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    font-size: $font-size-base;
-    color: $text-color;
-    background-color: $background-color;
+    font-size: variables.$font-size-base;
+    color: variables.$text-color;
+    background-color: variables.$background-color;
     line-height: 1.6;
 }
 
@@ -19,12 +19,12 @@ h3,
 h4,
 h5,
 h6 {
-    margin-bottom: $spacing-md;
+    margin-bottom: variables.$spacing-md;
     font-weight: 600;
 }
 
 p {
-    margin-bottom: $spacing-sm;
+    margin-bottom: variables.$spacing-sm;
 }
 
 button {
@@ -35,12 +35,12 @@ button {
 }
 
 a {
-    color: $primary-color;
+    color: variables.$primary-color;
     text-decoration: none;
     @include transition(color);
 
     &:hover {
-        color: darken($primary-color, 10%);
+        color: darken(variables.$primary-color, 10%);
     }
 }
 
@@ -48,7 +48,7 @@ a {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 $spacing-md;
+    padding: 0 variables.$spacing-md;
 }
 
 .text-center {
@@ -60,25 +60,25 @@ a {
 }
 
 .mt-sm {
-    margin-top: $spacing-sm;
+    margin-top: variables.$spacing-sm;
 }
 
 .mt-md {
-    margin-top: $spacing-md;
+    margin-top: variables.$spacing-md;
 }
 
 .mt-lg {
-    margin-top: $spacing-lg;
+    margin-top: variables.$spacing-lg;
 }
 
 .mb-sm {
-    margin-bottom: $spacing-sm;
+    margin-bottom: variables.$spacing-sm;
 }
 
 .mb-md {
-    margin-bottom: $spacing-md;
+    margin-bottom: variables.$spacing-md;
 }
 
 .mb-lg {
-    margin-bottom: $spacing-lg;
+    margin-bottom: variables.$spacing-lg;
 }
